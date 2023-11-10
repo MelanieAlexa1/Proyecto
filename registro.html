@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="qrcode.min.js"></script>
+<body style="background: rgb(238,174,202);
+background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(228,233,148,1) 100%);"></body>
+    <meta charset="UTF-8">
+    <title>Página de Registro</title>
+</head>
+<center>
+<body>
+    <h1>Registro de Usuarios</h1>
+    <form action="procesar_registro.php" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required><br>
+        <label for="correo">Correo Electrónico:</label>
+        <input type="email" name="correo" id="correo" required><br>
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" name="contrasena" id="contrasena" required><br>
+        <label for="telefono">Telefono:</label>
+        <input type="int" name="telefono" id="telefono" required><br>
+        <input type="submit" value="Registrarse">
+    </form>
+    <div id="codigo-qr"></div>
+    <script>
+        var qrcode = new QRCode(document.getElementById("codigo-qr"), {
+            text: "http://localhost/registro.html", // URL a la página de registro
+            width: 128, // Ancho del código QR
+            height: 128 // Altura del código QR
+        });
+    </script>
+</body>
+</center>
+</html>
+
